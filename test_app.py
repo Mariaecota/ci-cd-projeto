@@ -1,4 +1,4 @@
-import aplicativo
+import app
 
 def test_hello():
-    assert aplicativo.hello() == "Hello, CI/CD!"
+    assert app.hello() == "Hello, CI/CD!"

@@ -21,7 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest   # <- aqui garantimos que o pytest sempre será instalado
 
       - name: Rodar testes
-        run: |
-          pytest -q || echo "Nenhum teste encontrado, mas workflow rodou com sucesso"
+        run: pytest -q   # <- aqui tiramos o "|| echo...", assim falha se o teste falhar

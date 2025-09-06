@@ -25,3 +25,12 @@ jobs:
 
       - name: Rodar testes
         run: pytest -q   # <- aqui tiramos o "|| echo...", assim falha se o teste falhar
+deploy:
+    runs-on: ubuntu-latest
+    needs: test  # Isso diz para o GitHub: "Só faça essa tarefa se a de 'test' passar!"
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: A nova tarefa de entrega (deploy)
+        run: echo "Aqui é onde a sua aplicação seria entregue."
